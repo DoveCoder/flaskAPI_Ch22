@@ -1,0 +1,8 @@
+mac:
+source venv/bin/activate
+
+win: 
+venv\Scripts\activate
+
+Start mongo:
+brew services start mongodb-community@5.0
