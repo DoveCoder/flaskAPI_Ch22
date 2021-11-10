@@ -6,6 +6,8 @@ from config import db
 import json
 from bson import ObjectId
 
+# notes
+
 app = Flask(__name__) # magic variable (name)
 print(__name__)
 CORS(app) # allow anyone to call the server (**Danger**)
@@ -186,7 +188,7 @@ def get_coupon_by_code(code):
     coupon = db.couponCodes.find_one({"code": code})
     if coupon is None:
         return abort(404, "Invalid coupon code")  
-          
+
     return json_parse(coupon)
 
 @app.route("/test/onetime/filldb")
